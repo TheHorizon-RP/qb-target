@@ -226,6 +226,21 @@ CreateThread(function()
 	end
 end)
 
+RegisterNetEvent("inventory:client:Crafting", function(dropId)
+	local crafting = {}
+	crafting.label = "Crafting"
+	crafting.items = GetThresholdItems()
+	TriggerServerEvent("inventory:server:OpenInventory", "crafting", math.random(1, 99), crafting)
+end)
+
+
+RegisterNetEvent("inventory:client:WeaponAttachmentCrafting", function(dropId)
+	local crafting = {}
+	crafting.label = "Attachment Crafting"
+	crafting.items = GetAttachmentThresholdItems()
+	TriggerServerEvent("inventory:server:OpenInventory", "attachment_crafting", math.random(1, 99), crafting)
+end)
+
 function CheckOptions(data, entity, distance)
 	if distance and data.distance and distance > data.distance then return false end
 	if data.job and not JobCheck(data.job) then return false end

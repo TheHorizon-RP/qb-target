@@ -68,3 +68,19 @@ targeting:AddGlobalPlayer({
     },
     distance = Config.MaxDistance
 })
+
+targeting:AddGlobalObject({
+    options = {
+        {
+            event = "inventory:client:WeaponAttachmentCrafting",
+            icon = "fas fa-wrench",
+            label = "Weapon Attachment Crafting", 
+        },
+        {
+            event = "inventory:client:Crafting",
+            icon = "fas fa-wrench",
+            label = "Item Crafting", 
+        },
+    },
+distance = 1.0
+})
